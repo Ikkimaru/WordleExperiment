@@ -1,0 +1,23 @@
+<div class="wordle-game">
+    <h1>Wordle Game</h1>
+  
+    <!-- Display result -->
+    <div *ngIf="result.length > 0">
+      <p>Your result:</p>
+      <ul>
+        <li *ngFor="let letter of result">{{ letter }}</li>
+      </ul>
+    </div>
+  
+    <!-- User Input for Guessing -->
+    <input type="text" [(ngModel)]="guess" maxlength="5" placeholder="Enter your guess" />
+  
+    <!-- Submit Button -->
+    <button (click)="submitGuess()">Submit Guess</button>
+    <button (click)="getNextWord()">Get Next Word</button> <!-- Button to get the next word -->
+  
+    <!-- Show the answer for testing purposes (Remove in production) -->
+    <p *ngIf="answer">Answer: {{ answer }}</p>
+  </div>
+
+  
